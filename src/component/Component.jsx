@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import Card from './Card'
 
 
