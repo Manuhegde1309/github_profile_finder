@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import 'semantic-ui-css/semantic.min.css'
 
-const Card = ({Card}) => {
+const Card = ({Card,repos}) => {
   
   return (
   <>
@@ -20,7 +21,11 @@ const Card = ({Card}) => {
       <td>{Card.followers}</td>
       <td>{Card.following}</td>
       <td>{Card.public_repos? Card.public_repos:"N/A"}</td>
-      <td><a href={Card.html_url} target="_blank" rel="noopener noreferrer" >View</a></td>
+      <td>{
+        repos.map(repo=>(
+            <p key={repo.id}><a href={repo.url} target="_blank" rel="noreferrer">{repo.name}</a></p>
+        ))
+        }</td>
     </tr>
     </tbody>
   </table>
@@ -28,7 +33,10 @@ const Card = ({Card}) => {
 
   </>
   )
+
+
+
   
 }
-
+//
 export default Card
